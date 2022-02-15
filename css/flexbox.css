@@ -1,0 +1,133 @@
+.cabecalhoPrincipal .container{ /*flex container é o elemento pai que coloca display flex, os flex itens se posiciona nele*/
+    display: flex;  /* colocar elemento um do lado do outro , container é um flex box*/
+    align-items: center; /*tudo que esta no coitaner será alinhado verticalmente no centro*/
+    justify-content: space-between;    /*todo espaço entre os dois elementos do container*/       
+} 
+
+.cabecalhoPrincipal-nav{
+    display:flex;
+}
+
+.rodapePrincipal-patrocinadores .container {
+    display:flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display:flex;
+    align-items: center;
+    justify-content: space-around; /*todo espaço em volta dos elementos*/
+    width:70%; /* definir a largura para este grupo de elemento*/
+    margin-right: 5%;
+}
+
+.RodapePrincipal-contatoForm {
+    width:25%
+}
+
+.rodapePrincipal-contatoForm-fieldset{
+    display:flex; /*coloca o flex no pai , os filhos ficam na mesma altura*/
+}
+
+.rodapePrincipal-navMap-list{
+    display:flex; 
+    /*flex-direction: column;  column o elemento fica um debaixo do outro muda a direção*/
+    /*flex-wrap: wrap;   Quebrar as colunas p/ quando não couber na mesma linha*/
+    Flex-flow: column wrap; /* esse comando substitui os dois acima */
+    height: 250px;
+}
+
+.conteudoPrincipal-cursos{
+    display:flex ;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.conteudoPrincipal-cursos-link{
+    width: 20% ; /*para realizar o grid precisa colocar tamanho largura p/ divs*/
+    margin:1%; /* marem para cada botão de 1%*/
+
+}
+
+.conteudoPrincipal-cursos-link:nth-child(4n){
+    margin-right: 0;  /*retirar as margens dos botões a direita*/
+}
+
+
+.conteudoPrincipal-cursos-link:nth-child(4n+1){ /*4n+1 multiplicação dos botões 4,8,12..*/
+    margin-left: 0;  /*retirar as margens dos botões a direita*/
+}
+
+.videoSobre-sobre {
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    flex-grow: 2; /*item menor aumente para diminuir espaço ocioso*/
+}
+
+.videoSobre .container {
+    display:flex;
+}
+.videoSobre-sobre-list{
+    flex-grow: 1;
+}
+
+.videoSobre-video{
+    flex-grow:1;
+    flex-shrink: 2; /* ao contrario doo grow , este diminui*/
+}
+
+
+/* Parte Mobile */
+@media(max-width:768px){  /*Esse codigo permite a diferença do tamanho para mobile e web */
+
+    .cabecalhoPrincipal-nav{
+        flex-direction:column;
+    
+    }
+
+    .cabecalhoPrincipal .container{ /*ERRROR*/
+        flex-direction:column;
+        align-items: initial;  /* para demarcar toda linha*/
+        text-align: center;  
+    }
+
+    .conteudoPrincipal-cursos{
+        flex-direction: column;
+
+    }
+
+    .conteudoPrincipal-cursos-link{
+        width: 100%;
+    }
+
+    .rodapePrincipal-navMap-list{
+        height:auto;
+    }
+
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .rodapePrincipal-patrocinadores-list{
+        margin:0;
+        width:100%
+    }
+
+    .rodapePrincipal-contatoForm {
+        width:100%
+    }
+
+    .rodapePrincipal-contatoForm-fieldset{
+        justify-content: center ;
+    }
+
+    .videoSobre .container{
+        flex-direction: column;
+    }
+
+    .videoSobre-video{
+        margin:0 auto;  /*alinhamento do video modo celular*/
+    }
+}
